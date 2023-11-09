@@ -13,10 +13,10 @@ let handler = async (m, { conn, text, usedPrefix, command, args, participants, i
   let [_, code] = text.match(linkRegex) || []
   if (!args[0]) throw `✳️ Send the group link\n\n 📌 Example:\n *${usedPrefix + command}* <linkwa> <dias>\n\n_the number is the days the bot will be in the group_` 
   if (!code) throw `✳️ Link invalid`
-  if (!args[1]) throw `📌 Missing number of days\n\n Example:\n *${usedPrefix + command}* <linkwa> 2`
+  if (!args[1]) throw `👾 Missing number of days\n\n Example:\n *${usedPrefix + command}* <linkwa> 2`
   if (isNaN(args[1])) throw `✳️ Number only, representing the days the bot will be in the group!`
   let owbot = global.owner[1] 
-  m.reply(`😎 Wait 3 seconds, I will join the group`)
+  m.reply(`*😍💥* ```WAIT 1 SECONDS 👻!```, I will join the group`)
   await delay(3000)
   try {
   let res = await conn.groupAcceptInvite(code)
@@ -43,7 +43,7 @@ I was invited by *${m.name}*`, m, {
      })
      if (!e.length) await conn.reply(global.owner[1]+'@s.whatsapp.net', `≡ *INVITACIÓN A GRUPO*\n\n@${m.sender.split('@')[0]} has invited *${conn.user.name}* to group\n\n*${await conn.getName(res)}*\n\n*ID* : ${res}\n\n📌 link : ${args[0]}\n\nThe bot will exit automatically after\n\n ${msToDate(global.db.data.chats[res].expired - now)}`, null, {mentions: [m.sender]})
      if (!e.length) await m.reply(`✳️ Successfully invite bot to group\n\n${await conn.getName(res)}\n\nThe bot will exit automatically after *${msToDate(global.db.data.chats[res].expired - now)}*`).then(async () => {
-     let mes = `Hii 👋🏻
+     let mes = `Hi 👋🏻
      
 *${conn.user.name}* is one of the multi-device WhatsApp bots built with Node.js, *${conn.user.name}* just invited by *${m.name}*
 
@@ -60,7 +60,7 @@ ${usedPrefix}help
       throw `✳️ Sorry, the bot  joined group`
       }
 }
-handler.help = ['join <chat.whatsapp.com> <dias>']
+handler.help = ['```JOIN``` <chat.whatsapp.com> <dias>']
 handler.tags = ['owner']
 handler.command = ['join', 'invite'] 
 
